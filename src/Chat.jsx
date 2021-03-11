@@ -12,7 +12,7 @@ const Chat = () => {
     const messagesEndRef = useRef(null)
 
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "center"})
     }
 
     useEffect(()=>{
@@ -78,7 +78,6 @@ const Chat = () => {
                     <input name="message" type="text" placeholder="Type message here ..." value={input} onChange={inputEvent}/>
 
                     <button type="submit" onClick={sendMessage}>click me</button>
-                    {/* <input type="submit" value="Submit" /> */}
                 </form>
             </div>
         </div>
