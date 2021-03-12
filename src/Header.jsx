@@ -1,5 +1,5 @@
 import React from 'react'
-import './Header.css';
+import './css/Header.css';
 import Avatar from '@material-ui/core/Avatar';
 const Header = () => {
     return (
@@ -7,7 +7,7 @@ const Header = () => {
             <div className="logo">
                 <h3>AI playground</h3>
             </div>
-            <div className="menu">
+            <div className="menu Text-Style-2">
                 <ul>
                     <li>Learn AI</li>
                     <li>Docs</li>

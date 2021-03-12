@@ -1,5 +1,5 @@
 import React, { useState, useEffect,useRef } from 'react'
-import './Chat.css';
+import './css/Chat.css';
 import axios from 'axios';
 import { Avatar } from '@material-ui/core';
 
@@ -12,7 +12,7 @@ const Chat = () => {
     const messagesEndRef = useRef(null)
 
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "center"})
+        messagesEndRef.current.scrollIntoView({behavior: 'smooth', inline: 'start'})
     }
 
     useEffect(()=>{
@@ -43,22 +43,24 @@ const Chat = () => {
     
     const sendMessage = (event)=>{
         event.preventDefault();
-        setChangeData(true);
-        setObj((oldItem)=>{
-            return {
-                ...oldItem,
-                'type':'sender',
-                'message':input
-            }
-        });
-        const data = componentDidMount(input);
-        setInput("");
+        if(input){
+            setChangeData(true);
+            setObj((oldItem)=>{
+                return {
+                    ...oldItem,
+                    'type':'sender',
+                    'message':input
+                }
+            });
+            const data = componentDidMount(input);
+            setInput("");
+        }
     }
 
 
     return (
         <div className="chat">
-            <div className="chat_body">
+            <div className="chat_body Text-Style-2">
             {
                 messages.map((user,index,arr)=>{
                     return (
@@ -73,7 +75,7 @@ const Chat = () => {
             }
                 <div ref={messagesEndRef} />
             </div>
-            <div className="chat_input">
+            <div className="chat_input Text-Style">
                 <form>
                     <input name="message" type="text" placeholder="Type message here ..." value={input} onChange={inputEvent}/>
 

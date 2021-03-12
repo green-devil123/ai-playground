@@ -1,5 +1,5 @@
 import React from 'react'
-import './Editor.css';
+import './css/Editor.css';
 const Editor = () => {
     return (
         <div className="editor">
